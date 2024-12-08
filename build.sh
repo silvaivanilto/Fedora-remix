@@ -14,9 +14,8 @@ RELEASE="$(rpm -E %fedora)"
 
 # this installs a package from fedora repos
 rpm-ostree override remove kdebugsettings firewall-config plasma-drkonqi
-rpm-ostree install plasma-firewall-firewalld virt-install virt-manager virt-viewer 
-flatpak uninstall --all
-sudo rpm-ostree cleanup -m
+rpm-ostree install plasma-firewall-firewalld
+rpm-ostree cleanup -m
 
 # this would install a package from rpmfusion
 # rpm-ostree install vlc
