@@ -14,7 +14,7 @@ RELEASE="$(rpm -E %fedora)"
 
 # this installs a package from fedora repos
 rpm-ostree override remove kdebugsettings firewall-config plasma-drkonqi
-rpm-ostree override install plasma-firewall-firewalld
+rpm-ostree override install plasma-firewall-firewalld virt-install virt-manager virt-viewer 
 flatpak uninstall --all
 sudo rpm-ostree cleanup -m
 
