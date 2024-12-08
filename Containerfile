@@ -2,7 +2,7 @@
 # These allow changing the produced image by passing different build args to adjust
 # the source from which your image is built.
 # Build args can be provided on the commandline when building locally with:
-#   podman build -f Containerfile --build-arg FEDORA_VERSION=40 -t local-image
+#   podman build -f Containerfile --build-arg FEDORA_VERSION=41 -t local-image
 
 # SOURCE_IMAGE arg can be anything from ublue upstream which matches your desired version:
 # See list here: https://github.com/orgs/ublue-os/packages?repo_name=main
@@ -15,7 +15,7 @@
 # - "base"
 #
 #  "aurora", "bazzite", "bluefin" or "ucore" may also be used but have different suffixes.
-ARG SOURCE_IMAGE="silverblue"
+ARG SOURCE_IMAGE="kinoite"
 
 ## SOURCE_SUFFIX arg should include a hyphen and the appropriate suffix name
 # These examples all work for silverblue/kinoite/sericea/onyx/lazurite/vauxite/base
@@ -33,10 +33,10 @@ ARG SOURCE_IMAGE="silverblue"
 # - stable-zfs
 # - stable-nvidia-zfs
 # - (and the above with testing rather than stable)
-ARG SOURCE_SUFFIX="-main"
+ARG SOURCE_SUFFIX="-nvidia"
 
 ## SOURCE_TAG arg must be a version built for the specific image: eg, 39, 40, gts, latest
-ARG SOURCE_TAG="latest"
+ARG SOURCE_TAG="41"
 
 
 ### 2. SOURCE IMAGE
