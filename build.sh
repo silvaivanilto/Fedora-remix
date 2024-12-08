@@ -1,4 +1,4 @@
-#!/bin/bash
+pos#!/bin/bash
 
 set -ouex pipefail
 
@@ -13,7 +13,10 @@ RELEASE="$(rpm -E %fedora)"
 # https://mirrors.rpmfusion.org/mirrorlist?path=free/fedora/updates/39/x86_64/repoview/index.html&protocol=https&redirect=1
 
 # this installs a package from fedora repos
-rpm-ostree install screen
+rpm-ostree override remove kdebugsettings firewall-config
+rpm-ostree override install plasma-firewall-firewalld
+flatpak uninstall --all
+sudo rpm-ostree cleanup -m
 
 # this would install a package from rpmfusion
 # rpm-ostree install vlc
